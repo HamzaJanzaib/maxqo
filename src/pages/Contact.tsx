@@ -18,6 +18,7 @@ import { CustomSelect } from '../components/ui/CustomSelect';
 import { PageHero } from '../components/Reveal';
 import { serviceOptions } from '../data/services';
 import { company } from '../data/company';
+import { submitContactEnquiry } from '../lib/api';
 import type { ContactFormData } from '../types';
 
 const budgetOptions = [
@@ -102,6 +103,7 @@ export const Contact: React.FC = () => {
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const update = <K extends keyof ContactFormData>(key: K, value: ContactFormData[K]) => {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -174,7 +176,7 @@ export const Contact: React.FC = () => {
     setStep(target);
   };
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (step < STEPS.length - 1) {
       goNext();
@@ -182,11 +184,18 @@ export const Contact: React.FC = () => {
     }
     if (!validateStep(2)) return;
     setSubmitting(true);
-    window.setTimeout(() => {
-      setSubmitting(false);
+    setSubmitError('');
+    try {
+      await submitContactEnquiry(form);
       setSuccess(true);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 1000);
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error ? err.message : 'Failed to send your enquiry. Please try again.'
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const fieldClass =
@@ -691,6 +700,12 @@ export const Contact: React.FC = () => {
                   </div>
 
                   {/* Nav actions */}
+                  {submitError && (
+                    <p className="mt-6 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
+                      {submitError}
+                    </p>
+                  )}
+
                   <div className="mt-8 pt-5 border-t border-line flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div>
                       {step > 0 ? (
