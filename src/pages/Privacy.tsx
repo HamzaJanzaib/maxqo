@@ -1,20 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PolicyLayout, PolicyH2 } from '../components/PolicyLayout';
+import { company } from '../data/company';
 
 export const Privacy: React.FC = () => (
   <PolicyLayout title="Privacy Policy" updated="13 October 2026">
     <p>
-      Maxqo (“we”, “us”, “our”) respects your privacy. This policy explains how we collect, use, and
-      protect personal information when you visit maxqo.co.uk or contact us about our digital agency
+      {company.legalName} (“we”, “us”, “our”) respects your privacy. This policy explains how we collect, use, and
+      protect personal information when you visit {company.website.replace('https://', '')} or contact us about our digital agency
       services.
     </p>
 
     <PolicyH2>Who we are</PolicyH2>
     <p>
-      Maxqo is a digital agency based in the United Kingdom. For privacy questions, email{' '}
-      <a href="mailto:hello@maxqo.co.uk" className="text-teal-dark hover:underline">
-        hello@maxqo.co.uk
+      {company.legalName} is a digital agency registered in the United Kingdom. Director: {company.director}.
+      Registered address: {company.addressFull}. For privacy questions, email{' '}
+      <a href={`mailto:${company.email}`} className="text-teal-dark hover:underline">
+        {company.email}
+      </a>{' '}
+      or call{' '}
+      <a href={company.phoneHref} className="text-teal-dark hover:underline">
+        {company.phoneDisplay}
       </a>
       .
     </p>
@@ -58,7 +64,7 @@ export const Privacy: React.FC = () => (
     <PolicyH2>Your rights</PolicyH2>
     <p>
       Under UK GDPR you may have rights to access, correct, delete, restrict, or object to certain
-      processing, and to data portability. Contact us at hello@maxqo.co.uk to exercise these rights.
+      processing, and to data portability. Contact us at {company.email} to exercise these rights.
       You may also complain to the Information Commissioner’s Office (ICO).
     </p>
 

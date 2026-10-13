@@ -1,22 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PolicyLayout, PolicyH2 } from '../components/PolicyLayout';
+import { company } from '../data/company';
 
 export const Terms: React.FC = () => (
   <PolicyLayout title="Terms of Service" updated="13 October 2026">
     <p>
       These Terms of Service (“Terms”) govern your use of the Maxqo website at maxqo.co.uk and general
-      engagement with Maxqo for digital agency services. By using the site, you agree to these Terms.
+      engagement with {company.legalName} for digital agency services. By using the site, you agree to these Terms.
     </p>
 
     <PolicyH2>About Maxqo</PolicyH2>
     <p>
-      Maxqo provides web development, custom software, digital marketing, and brand &amp; UI design
-      services. Contact:{' '}
-      <a href="mailto:hello@maxqo.co.uk" className="text-teal-dark hover:underline">
-        hello@maxqo.co.uk
+      {company.legalName} provides web development, custom software, digital marketing, and brand &amp; UI design
+      services. Director: {company.director}. Address: {company.addressFull}. Contact:{' '}
+      <a href={`mailto:${company.email}`} className="text-teal-dark hover:underline">
+        {company.email}
       </a>
-      . United Kingdom.
+      {' · '}
+      <a href={company.phoneHref} className="text-teal-dark hover:underline">
+        {company.phoneDisplay}
+      </a>
+      .
     </p>
 
     <PolicyH2>Website use</PolicyH2>
@@ -35,7 +40,7 @@ export const Terms: React.FC = () => (
 
     <PolicyH2>Intellectual property</PolicyH2>
     <p>
-      Website design, copy, logos, and materials on maxqo.co.uk are owned by Maxqo or our licensors.
+      Website design, copy, logos, and materials on maxqo.co.uk are owned by {company.legalName} or our licensors.
       You may not copy or reuse them without permission, except for fair personal viewing. Client
       project IP is handled in the relevant project agreement.
     </p>
@@ -48,7 +53,7 @@ export const Terms: React.FC = () => (
 
     <PolicyH2>Limitation of liability</PolicyH2>
     <p>
-      To the fullest extent permitted by law, Maxqo is not liable for indirect or consequential loss
+      To the fullest extent permitted by law, {company.legalName} is not liable for indirect or consequential loss
       arising from use of this website. Nothing in these Terms excludes liability that cannot be
       excluded under UK law (including for death or personal injury caused by negligence, or fraud).
     </p>

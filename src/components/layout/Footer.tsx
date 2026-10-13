@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Logo } from '../Logo';
 import { services } from '../../data/services';
+import { company } from '../../data/company';
 
 export const Footer: React.FC = () => {
   return (
@@ -18,14 +19,27 @@ export const Footer: React.FC = () => {
           <div className="col-span-2 md:col-span-1">
             <Logo variant="light" />
             <p className="mt-4 text-sm leading-relaxed max-w-xs">
-              Digital agency for web, software, marketing, and design. Built for teams who want clarity and craft.
+              {company.legalName} — digital agency for web, software, marketing, and design.
             </p>
-            <a
-              href="mailto:hello@maxqo.co.uk"
-              className="mt-4 inline-block text-sm text-teal hover:text-white transition-colors"
-            >
-              hello@maxqo.co.uk
-            </a>
+            <div className="mt-4 space-y-1.5 text-sm">
+              <a
+                href={`mailto:${company.email}`}
+                className="block text-teal hover:text-white transition-colors"
+              >
+                {company.email}
+              </a>
+              <a
+                href={company.phoneHref}
+                className="block text-teal hover:text-white transition-colors"
+              >
+                {company.phoneDisplay}
+              </a>
+              <p className="text-white/55 leading-relaxed pt-1">
+                {company.address.line1}
+                <br />
+                {company.address.line2}, {company.address.postcode}
+              </p>
+            </div>
           </div>
 
           <div>
@@ -88,8 +102,11 @@ export const Footer: React.FC = () => {
         </motion.div>
 
         <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/50">
-          <p>© {new Date().getFullYear()} Maxqo. All rights reserved. United Kingdom.</p>
-          <p>Web · Software · Marketing · Design</p>
+          <p>
+            © {new Date().getFullYear()} {company.legalName}. All rights reserved. Director:{' '}
+            {company.director}.
+          </p>
+          <p>Bridgend, UK · Web · Software · Marketing · Design</p>
         </div>
       </div>
     </footer>

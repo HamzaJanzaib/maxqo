@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { Section, SectionHeading } from '../components/ui/Section';
 import { ButtonLink } from '../components/ui/Button';
 import { PageHero, Reveal } from '../components/Reveal';
+import { company } from '../data/company';
 
 const values = [
   {
@@ -58,7 +59,7 @@ export const About: React.FC = () => {
                 Maxqo started from a simple frustration: too many projects fail because strategy, design, and engineering never share the same brief. Brands get a pretty site that cannot convert. Products get features nobody asked for. Campaigns launch without a landing experience ready.
               </p>
               <p>
-                We built Maxqo as a single partner for that full stack — digital work with one voice, one timeline, and one team accountable for the outcome. Based in the United Kingdom, we work with founders, operators, and marketing leads who value clear communication and thoughtful craft.
+                We built Maxqo as a single partner for that full stack — digital work with one voice, one timeline, and one team accountable for the outcome. Based in Bridgend, United Kingdom, we work with founders, operators, and marketing leads who value clear communication and thoughtful craft.
               </p>
               <p>
                 Whether you need a launch site, a custom internal tool, a growth campaign, or a brand refresh, we meet you where you are and ship what moves the needle.
@@ -74,10 +75,40 @@ export const About: React.FC = () => {
               <p className="font-display text-2xl sm:text-3xl font-bold leading-snug relative">
                 “Good digital work should feel inevitable once you see it — and useful the day it ships.”
               </p>
-              <p className="mt-8 text-sm text-teal relative">— Maxqo</p>
+              <div className="mt-8 relative space-y-1">
+                <p className="text-sm text-teal">— {company.director}</p>
+                <p className="text-xs text-white/50">Director, {company.legalName}</p>
+              </div>
             </motion.div>
           </Reveal>
         </div>
+      </Section>
+
+      <Section compact className="!bg-white">
+        <Reveal>
+          <div className="rounded-2xl border border-line bg-paper-dim p-6 sm:p-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-wider text-muted mb-1">Company</p>
+              <p className="text-sm font-semibold text-ink">{company.legalName}</p>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-wider text-muted mb-1">Director</p>
+              <p className="text-sm font-semibold text-ink">{company.director}</p>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-wider text-muted mb-1">Phone</p>
+              <a href={company.phoneHref} className="text-sm font-semibold text-ink hover:text-teal-dark">
+                {company.phoneDisplay}
+              </a>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-wider text-muted mb-1">Address</p>
+              <p className="text-sm font-semibold text-ink leading-snug">
+                {company.address.line1}, {company.address.line2}, {company.address.postcode}
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </Section>
 
       <Section className="!bg-paper-dim">

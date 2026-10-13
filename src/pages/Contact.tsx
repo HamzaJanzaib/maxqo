@@ -17,6 +17,7 @@ import { Button } from '../components/ui/Button';
 import { CustomSelect } from '../components/ui/CustomSelect';
 import { PageHero } from '../components/Reveal';
 import { serviceOptions } from '../data/services';
+import { company } from '../data/company';
 import type { ContactFormData } from '../types';
 
 const budgetOptions = [
@@ -221,8 +222,8 @@ export const Contact: React.FC = () => {
                   </span>
                   <div>
                     <p className="font-medium text-ink">Email</p>
-                    <a href="mailto:hello@maxqo.co.uk" className="text-muted hover:text-teal-dark">
-                      hello@maxqo.co.uk
+                    <a href={`mailto:${company.email}`} className="text-muted hover:text-teal-dark">
+                      {company.email}
                     </a>
                   </div>
                 </li>
@@ -232,7 +233,9 @@ export const Contact: React.FC = () => {
                   </span>
                   <div>
                     <p className="font-medium text-ink">Phone</p>
-                    <p className="text-muted">Available on request after enquiry</p>
+                    <a href={company.phoneHref} className="text-muted hover:text-teal-dark">
+                      {company.phoneDisplay}
+                    </a>
                   </div>
                 </li>
                 <li className="flex gap-3">
@@ -240,8 +243,14 @@ export const Contact: React.FC = () => {
                     <MapPin size={16} />
                   </span>
                   <div>
-                    <p className="font-medium text-ink">Location</p>
-                    <p className="text-muted">United Kingdom · Remote-friendly worldwide</p>
+                    <p className="font-medium text-ink">Address</p>
+                    <p className="text-muted leading-relaxed">
+                      {company.address.line1}
+                      <br />
+                      {company.address.line2}, {company.address.postcode}
+                      <br />
+                      {company.address.country}
+                    </p>
                   </div>
                 </li>
                 <li className="flex gap-3">

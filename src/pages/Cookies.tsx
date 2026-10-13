@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PolicyLayout, PolicyH2 } from '../components/PolicyLayout';
+import { company } from '../data/company';
 
 export const Cookies: React.FC = () => (
   <PolicyLayout title="Cookie Policy" updated="13 October 2026">
     <p>
-      This Cookie Policy explains how Maxqo uses cookies and similar technologies on maxqo.co.uk. For
+      This Cookie Policy explains how {company.legalName} uses cookies and similar technologies on maxqo.co.uk. For
       broader privacy practices, see our{' '}
       <Link to="/privacy" className="text-teal-dark hover:underline">
         Privacy Policy
@@ -63,10 +64,14 @@ export const Cookies: React.FC = () => (
     <PolicyH2>Contact</PolicyH2>
     <p>
       Questions about cookies? Email{' '}
-      <a href="mailto:hello@maxqo.co.uk" className="text-teal-dark hover:underline">
-        hello@maxqo.co.uk
+      <a href={`mailto:${company.email}`} className="text-teal-dark hover:underline">
+        {company.email}
+      </a>{' '}
+      or call{' '}
+      <a href={company.phoneHref} className="text-teal-dark hover:underline">
+        {company.phoneDisplay}
       </a>
-      .
+      . Address: {company.addressFull}.
     </p>
   </PolicyLayout>
 );
