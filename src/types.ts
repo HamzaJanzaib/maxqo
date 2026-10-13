@@ -1,65 +1,28 @@
-export interface Plan {
-  id: string;
+export interface ContactFormData {
   name: string;
-  monthlyPrice: number;
-  annualPrice: number;
-  memberLimit: string;
-  description: string;
-  features: string[];
-  isPopular?: boolean;
-  ctaText: string;
+  email: string;
+  company: string;
+  jobTitle: string;
+  phone: string;
+  website: string;
+  services: string[];
+  projectType: string;
+  budget: string;
+  timeline: string;
+  startPreference: string;
+  teamSize: string;
+  source: string;
+  goals: string;
+  challenges: string;
+  inspiration: string;
+  details: string;
+  preferredContact: string;
+  bestTime: string;
+  newsletter: boolean;
+  nda: boolean;
 }
 
-export interface FeatureItem {
-  id: string;
-  title: string;
-  description: string;
-  iconName: string;
-  badge?: string;
-  metric?: string;
-}
-
-export interface ClassScheduleItem {
-  time: string;
-  name: string;
-  instructor: string;
-  enrolled: number;
-  capacity: number;
-  waitlist: number;
-  room: string;
-  tag: string;
-  tagColor: string;
-}
-
-export interface MemberCheckIn {
-  id: string;
-  name: string;
-  avatar: string;
-  timeAgo: string;
-  membership: string;
-  status: 'Checked in' | 'Access Granted' | 'Guest Pass';
-  class?: string;
-}
-
-export interface TrialFormData {
-  fullName: string;
-  workEmail: string;
-  gymName: string;
-}
-
-export interface TestimonialItem {
-  id: string;
-  name: string;
-  role: string;
-  gymName: string;
-  location: string;
-  category: 'Strength & Conditioning' | 'CrossFit & Group' | 'Yoga & Pilates' | 'Combat & Boxing';
-  quote: string;
-  highlightMetric: string;
-  metricLabel: string;
-  rating: number;
-  initials: string;
-  avatarColor: string;
-  switchedFrom: string;
-  memberCount: string;
+export interface NavLink {
+  to: string;
+  label: string;
 }

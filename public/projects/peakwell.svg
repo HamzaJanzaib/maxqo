@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A120C"/>
+      <stop offset="45%" stop-color="#2A1810"/>
+      <stop offset="100%" stop-color="#E85D04" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF9F1C"/>
+      <stop offset="100%" stop-color="#E85D04"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg3)"/>
+  <circle cx="980" cy="560" r="220" fill="url(#orb)" fill-opacity="0.25"/>
+  <circle cx="160" cy="180" r="120" fill="#FF9F1C" fill-opacity="0.12"/>
+  <!-- phone mock -->
+  <rect x="180" y="100" width="280" height="540" rx="36" fill="#0B0F14" stroke="#3A2A20"/>
+  <rect x="200" y="130" width="240" height="480" rx="24" fill="#16100C"/>
+  <rect x="250" y="145" width="140" height="10" rx="5" fill="#2A2018"/>
+  <rect x="220" y="180" width="200" height="120" rx="16" fill="url(#orb)" fill-opacity="0.85"/>
+  <rect x="220" y="320" width="160" height="14" rx="4" fill="#F7F5F0" fill-opacity="0.9"/>
+  <rect x="220" y="350" width="200" height="8" rx="3" fill="#6B5A4A"/>
+  <rect x="220" y="370" width="180" height="8" rx="3" fill="#6B5A4A"/>
+  <rect x="220" y="410" width="200" height="44" rx="12" fill="#E85D04"/>
+  <rect x="220" y="480" width="95" height="70" rx="12" fill="#241810"/>
+  <rect x="325" y="480" width="95" height="70" rx="12" fill="#241810"/>
+  <!-- desktop marketing -->
+  <rect x="520" y="160" width="540" height="360" rx="16" fill="#120E0A" stroke="#3A2A20"/>
+  <rect x="520" y="160" width="540" height="44" fill="#1A1410"/>
+  <circle cx="548" cy="182" r="6" fill="#E85D04"/>
+  <circle cx="570" cy="182" r="6" fill="#FF9F1C"/>
+  <rect x="560" y="230" width="220" height="18" rx="4" fill="#F7F5F0" fill-opacity="0.85"/>
+  <rect x="560" y="265" width="300" height="10" rx="3" fill="#6B5A4A"/>
+  <rect x="560" y="290" width="260" height="10" rx="3" fill="#6B5A4A"/>
+  <rect x="560" y="340" width="140" height="40" rx="10" fill="#E85D04"/>
+  <rect x="720" y="340" width="140" height="40" rx="10" fill="#241810" stroke="#E85D04"/>
+  <rect x="560" y="410" width="120" height="70" rx="10" fill="#241810"/>
+  <rect x="700" y="410" width="120" height="70" rx="10" fill="#241810"/>
+  <rect x="840" y="410" width="120" height="70" rx="10" fill="#241810"/>
+  <text x="180" y="700" fill="#F7F5F0" font-family="system-ui,sans-serif" font-size="28" font-weight="700">Peakwell</text>
+  <text x="360" y="700" fill="#FF9F1C" font-family="system-ui,sans-serif" font-size="18">Marketing · Design</text>
+</svg>
