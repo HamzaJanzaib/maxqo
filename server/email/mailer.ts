@@ -20,7 +20,8 @@ export function createMailTransport() {
   const port = Number(process.env.SMTP_PORT || 587);
   const secure = String(process.env.SMTP_SECURE || 'false') === 'true';
   const user = requiredEnv('SMTP_USER');
-  const pass = requiredEnv('SMTP_PASS');
+  // Gmail app passwords are often pasted with spaces — strip them.
+  const pass = requiredEnv('SMTP_PASS').replace(/\s+/g, '');
 
   return nodemailer.createTransport({
     host,
