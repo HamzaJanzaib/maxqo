@@ -31,31 +31,17 @@ export const PageHero: React.FC<{
   eyebrow: string;
   title: string;
   description: string;
-  image?: string;
-}> = ({ eyebrow, title, description, image }) => (
-  <section className="relative overflow-hidden bg-ink text-white pt-28 sm:pt-32 pb-12 sm:pb-16">
-    {image && (
-      <>
-        <motion.img
-          src={image}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.2 }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/70" />
-      </>
-    )}
-    {!image && (
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(ellipse 60% 80% at 90% 20%, rgba(0,194,168,0.2), transparent 50%)',
-        }}
-      />
-    )}
+}> = ({ eyebrow, title, description }) => (
+  <section className="relative overflow-hidden bg-ink text-white pt-28 sm:pt-32 pb-12 sm:pb-16 texture-bg">
+    <div
+      className="absolute inset-0"
+      aria-hidden="true"
+      style={{
+        background:
+          'radial-gradient(ellipse 70% 60% at 85% 15%, rgba(0,194,168,0.2), transparent 55%), radial-gradient(ellipse 40% 50% at 5% 90%, rgba(0,194,168,0.08), transparent 50%), linear-gradient(160deg, #0B0F14 0%, #151B24 50%, #0B0F14 100%)',
+      }}
+    />
+    <div className="absolute inset-0 texture-noise opacity-[0.35]" aria-hidden="true" />
     <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <motion.p
         initial={{ opacity: 0, y: 12 }}

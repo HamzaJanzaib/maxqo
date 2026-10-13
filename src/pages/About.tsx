@@ -47,7 +47,6 @@ export const About: React.FC = () => {
         eyebrow="About Maxqo"
         title="A digital agency built for focus."
         description="Maxqo helps UK businesses and ambitious teams grow with websites, software, marketing, and design that work together."
-        image="/projects/northline.svg"
       />
 
       <Section>

@@ -206,7 +206,6 @@ export const Contact: React.FC = () => {
         eyebrow="Contact"
         title="Tell us what you want to build."
         description="The more detail you share, the faster we can propose a clear first phase. We reply within one business day."
-        image="/projects/arc.svg"
       />
 
       <Section className="!pt-10 sm:!pt-12">

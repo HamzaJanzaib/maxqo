@@ -35,24 +35,16 @@ export const Home: React.FC = () => {
 
   return (
     <>
-      <section className="relative min-h-[88svh] sm:min-h-[92svh] flex flex-col justify-end overflow-hidden bg-ink text-white">
-        <motion.img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80"
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover"
-          fetchPriority="high"
-          initial={{ scale: 1.08 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-        />
+      <section className="relative min-h-[88svh] sm:min-h-[92svh] flex flex-col justify-end overflow-hidden bg-ink text-white texture-bg">
         <div
           className="absolute inset-0"
           aria-hidden="true"
           style={{
             background:
-              'linear-gradient(180deg, rgba(11,15,20,0.55) 0%, rgba(11,15,20,0.72) 45%, rgba(11,15,20,0.92) 100%), radial-gradient(ellipse 70% 50% at 75% 15%, rgba(0,194,168,0.28), transparent 55%)',
+              'radial-gradient(ellipse 80% 60% at 70% 15%, rgba(0,194,168,0.22), transparent 55%), radial-gradient(ellipse 50% 40% at 10% 85%, rgba(0,194,168,0.08), transparent 50%), linear-gradient(165deg, #0B0F14 0%, #151B24 48%, #0B0F14 100%)',
           }}
         />
+        <div className="absolute inset-0 texture-noise opacity-[0.35]" aria-hidden="true" />
         <motion.div
           className="pointer-events-none absolute left-1/2 top-1/3 h-64 w-64 -translate-x-1/2 rounded-full bg-teal/20 blur-3xl"
           animate={{ opacity: [0.35, 0.6, 0.35], scale: [1, 1.15, 1] }}
@@ -235,33 +227,53 @@ export const Home: React.FC = () => {
         </div>
       </Section>
 
-      <Section compact className="!bg-paper-dim !py-10">
+      <section className="bg-paper-dim py-12 sm:py-14 overflow-hidden">
         <motion.div
           {...fadeUp}
           transition={{ duration: 0.4 }}
-          className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10"
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8 text-center"
         >
-          <div className="lg:w-64 shrink-0">
-            <p className="text-sm font-semibold tracking-wide uppercase text-teal-dark mb-1">Industries</p>
-            <h2 className="font-display text-2xl font-bold tracking-tight">Who we build for</h2>
-          </div>
-          <div className="flex flex-wrap gap-2.5">
-            {industries.map((item, i) => (
-              <motion.span
-                key={item}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.04 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium text-ink cursor-default"
-              >
-                {item}
-              </motion.span>
-            ))}
-          </div>
+          <p className="text-sm font-semibold tracking-wide uppercase text-teal-dark mb-2">
+            Industries
+          </p>
+          <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+            Who we build for
+          </h2>
+          <p className="mt-2 text-sm sm:text-base text-muted max-w-lg mx-auto">
+            From startups to established brands — hover to pause and explore the sectors we serve.
+          </p>
         </motion.div>
-      </Section>
+
+        <div className="space-y-3">
+          <div className="marquee-row marquee-fade overflow-hidden">
+            <div className="marquee-track">
+              {[...industries, ...industries].map((item, i) => (
+                <span
+                  key={`row1-${item}-${i}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2.5 text-sm font-semibold text-ink shadow-sm whitespace-nowrap hover:border-teal hover:text-teal-dark hover:shadow-md transition-colors cursor-default"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-teal shrink-0" />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="marquee-row marquee-fade overflow-hidden">
+            <div className="marquee-track-reverse">
+              {[...industries].reverse().concat([...industries].reverse()).map((item, i) => (
+                <span
+                  key={`row2-${item}-${i}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-ink text-white px-4 py-2.5 text-sm font-semibold whitespace-nowrap hover:bg-teal hover:text-ink transition-colors cursor-default"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-teal shrink-0" />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Service capabilities detail */}
       <Section>
@@ -373,14 +385,22 @@ export const Home: React.FC = () => {
         </div>
       </Section>
 
-      {/* Customer dropdown + animated story */}
+      {/* Testimonials */}
       <Section className="!bg-paper-dim">
-        <motion.div {...fadeUp} transition={{ duration: 0.45 }}>
-          <SectionHeading
-            eyebrow="Customers"
-            title="Trusted by ambitious teams."
-            description="Pick a customer to see how we helped them grow."
-          />
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.45 }}
+          className="text-center max-w-2xl mx-auto mb-10"
+        >
+          <p className="text-sm font-semibold tracking-wide uppercase text-teal-dark mb-2">
+            Testimonials
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-ink">
+            Trusted by ambitious teams.
+          </h2>
+          <p className="mt-3 text-muted leading-relaxed">
+            Real outcomes from partners who shipped with Maxqo — tap a client or use the arrows to browse.
+          </p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -130,4 +130,8 @@ export const industries = [
   'Consumer brands',
   'Education',
   'Fintech & professional finance',
+  'E-commerce',
+  'Real estate',
+  'Hospitality',
+  'Non-profits',
 ];

@@ -25,8 +25,8 @@ export const caseStudies: CaseStudy[] = [
       'We redesigned the brand system and shipped a modular marketing site with clear service journeys and enquiry flows.',
     outcome: '3.2× more qualified enquiries in the first quarter after launch.',
     accent: '#00C2A8',
-    image: '/projects/northline.svg',
-    imageAlt: 'Northline Logistics web platform mockup',
+    image: '/projects/northline.jpg',
+    imageAlt: 'Northline Logistics web platform project cover',
   },
   {
     id: 'folio',
@@ -40,8 +40,8 @@ export const caseStudies: CaseStudy[] = [
       'Built a tailored web app for projects, time, and client status with role-based access for the team.',
     outcome: 'Cut weekly admin time by ~12 hours and improved on-time delivery.',
     accent: '#1F6FEB',
-    image: '/projects/folio.svg',
-    imageAlt: 'Folio Creative operations dashboard mockup',
+    image: '/projects/folio.jpg',
+    imageAlt: 'Folio Creative operations dashboard project cover',
   },
   {
     id: 'peakwell',
@@ -55,8 +55,8 @@ export const caseStudies: CaseStudy[] = [
       'Delivered brand refresh, landing pages, and a paid + organic campaign with weekly optimisation.',
     outcome: '40% lower cost-per-lead within 60 days of campaign launch.',
     accent: '#E85D04',
-    image: '/projects/peakwell.svg',
-    imageAlt: 'Peakwell marketing and brand campaign mockup',
+    image: '/projects/peakwell.jpg',
+    imageAlt: 'Peakwell wellness marketing campaign project cover',
   },
   {
     id: 'arc',
@@ -70,7 +70,7 @@ export const caseStudies: CaseStudy[] = [
       'Shipped a high-fidelity marketing site, waitlist product, and early analytics instrumentation.',
     outcome: '1,800 waitlist signups in six weeks from organic and partner traffic.',
     accent: '#7C3AED',
-    image: '/projects/arc.svg',
-    imageAlt: 'Arc Metrics SaaS product website mockup',
+    image: '/projects/arc.jpg',
+    imageAlt: 'Arc Metrics SaaS product website project cover',
   },
 ];

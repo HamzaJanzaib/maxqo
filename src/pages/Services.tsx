@@ -25,7 +25,6 @@ export const Services: React.FC = () => {
         eyebrow="Services"
         title="Web, software, marketing, and design — end to end."
         description="Pick a specialty or combine them. We scope clearly, ship in stages, and stay accountable for results."
-        image="/projects/peakwell.svg"
       />
 
       {services.map((service, index) => (
